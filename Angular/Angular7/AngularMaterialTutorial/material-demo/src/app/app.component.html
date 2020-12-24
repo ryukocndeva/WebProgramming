@@ -1,3 +1,60 @@
+
+
+<hr />
+<mat-spinner *ngIf="showSpinner"></mat-spinner>
+<button mat-raised-button (click)="loadData()">Load Data</button>
+<hr />
+
+<div>
+  <mat-progress-spinner value="40"></mat-progress-spinner>
+  <mat-progress-spinner value="100"></mat-progress-spinner>
+  <mat-spinner color="primary"></mat-spinner>
+  <mat-spinner color="accent"></mat-spinner>
+  <mat-spinner color="warn"></mat-spinner>
+</div>
+
+<hr />
+
+<div>
+  <span [matBadge]="notification">Notifications</span>
+</div>
+<div>
+  <span matBadge="5" matBadgeColor="primary">Notifications</span>
+</div>
+<div>
+  <span matBadge="5" matBadgeColor="accent">Notifications</span>
+</div>
+<div>
+  <span matBadge="5" matBadgeColor="warn" matBadgeOverlap="false">Notifications</span>
+</div>
+
+<div>
+  <span matBadge="5" matBadgeColor="warn" matBadgePostion="below before">Notifications</span>
+</div>
+<div>
+  <span matBadge="5" matBadgeColor="warn" matBadgeOverlap="below after">Notifications</span>
+</div>
+<div>
+  <span matBadge="5" matBadgeColor="warn" matBadgePostion="above before">Notifications</span>
+</div>
+<div>
+  <span matBadge="5" matBadgeColor="warn" matBadgeOverlap="above after">Notifications</span>
+</div>
+<div>
+  <span matBadge="5" matBadgeColor="warn" matBadgeSize="small">Notifications</span>
+</div>
+<div>
+  <span matBadge="5" matBadgeColor="warn" matBadgeSize="medium">Notifications</span>
+</div>
+
+<hr />
+
+<div>
+  <mat-icon color="primary">grade</mat-icon>
+</div>
+
+<hr />
+
 <div>
   <mat-button-toggle-group #toggleGroup="matButtonToggleGroup">
     <mat-button-toggle value="angular">Angular</mat-button-toggle>
