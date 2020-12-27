@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddComponent implements OnInit {
 
-  constructor() { }
+  addForm: FormGroup;
+  btnvisibility = true;
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.addForm = this.formBuilder.group({
+      sId: [],
+      fName: ['',  Validators.required],
+      lName: ['',  [Validators.required, Validators.maxLength(9)]],
+      email: ['',  [Validators.required, Validators.maxLength(30)]]
+    });
+  }
+
+  onSubmit() {
+    console.log(this.addForm.value);
   }
 
 }

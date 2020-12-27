@@ -1,3 +1,27 @@
-<p>
-  add works!
-</p>
+<div class="col-md-6">
+  <h2 class="text-center">Add Students</h2>
+  <form [formGroup]="addForm" novalidate class="form">
+    <div class="form-group">
+      <label for="sId">Student Id:</label>
+      <input type="number" formControlName="sId" placeholder="Student Id" name="sId" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="fName"> First Name:</label>
+      <input type="text" formControlName="fName" placeholder="Student First Name" name="fName" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="lName"> Last Name:</label>
+      <input type="text" formControlName="lName" placeholder="Student Last Name" name="lName" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="text" formControlName="email" placeholder="Student Email" name="email" class="form-control">
+    </div>
+
+    <button class="btn btn-success" [disabled]='addForm.invalid' *ngIf="btnvisibility" (click)="onSubmit()">Save</button>
+
+  </form>
+</div>
