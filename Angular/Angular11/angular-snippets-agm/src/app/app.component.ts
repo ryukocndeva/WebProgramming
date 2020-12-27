@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-snippets-agm';
+  latitude = 0; 
+  longitude = 0;
 }
