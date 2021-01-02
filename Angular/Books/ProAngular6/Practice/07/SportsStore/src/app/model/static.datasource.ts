@@ -34,14 +34,15 @@ export class StaticDataSource {
 
 
 
-        for (let i = 0; i < howMany; i++) {
-            tempIndex = this.products.length + i;
-            tempCategory = Math.floor(Math.random() * 3);
+        for (let i = 1; i < howMany + 1; i++) {
+            tempIndex = this.products.length + 1;
+            tempCategory = 1 + Math.floor(Math.random() * 3);
             tempPrice = Math.random() * 100000;
 
             tempProduct = new Product(
                 tempIndex,
-                "Product " + tempIndex, "Category " + tempCategory,
+                "Product " + tempIndex,
+                "Category " + tempCategory,
                 "Product " + tempIndex + " (Category " + tempCategory +  ")", 
                 tempPrice) ;
 
