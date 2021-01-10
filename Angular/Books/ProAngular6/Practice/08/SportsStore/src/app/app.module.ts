@@ -1,13 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { StoreModule } from './store/store.module';
+import { StoreFirstGuard } from './storeFirst.guard';
+
 import { RouterModule } from '@angular/router';
+import { AppComponent } from './app.component';
+
+import { StoreModule } from './store/store.module';
 import { StoreComponent } from './store/store.component';
 import { CartDetailComponent } from './store/cartDetail.component';
 import { CheckoutComponent } from './store/checkout.component';
-import { StoreFirstGuard } from './storeFirst.guard';
+
 
 @NgModule({
   declarations: [
@@ -17,10 +20,11 @@ import { StoreFirstGuard } from './storeFirst.guard';
     BrowserModule, 
     StoreModule,
     RouterModule.forRoot([
+      { path: "**", redirectTo: "/store" },
       { path: "store", component: StoreComponent, canActivate: [StoreFirstGuard] },
       { path: "cart", component: CartDetailComponent, canActivate: [StoreFirstGuard] },
       { path: "checkout", component: CheckoutComponent, canActivate: [StoreFirstGuard] },
-      { path: "**", redirectTo: "/store" },
+      { path: "admin", loadChildren: "./admin/admin.module#AdminModule", canActivate: [StoreFirstGuard] },
 
     ])
   ],
