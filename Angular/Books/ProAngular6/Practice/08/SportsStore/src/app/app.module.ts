@@ -20,11 +20,11 @@ import { CheckoutComponent } from './store/checkout.component';
     BrowserModule, 
     StoreModule,
     RouterModule.forRoot([
-      { path: "**", redirectTo: "/store" },
       { path: "store", component: StoreComponent, canActivate: [StoreFirstGuard] },
       { path: "cart", component: CartDetailComponent, canActivate: [StoreFirstGuard] },
       { path: "checkout", component: CheckoutComponent, canActivate: [StoreFirstGuard] },
       { path: "admin", loadChildren: "./admin/admin.module#AdminModule", canActivate: [StoreFirstGuard] },
+      { path: "**", redirectTo: "/store" },
 
     ])
   ],
