@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> {{ title }} </h1>
+<p> 
+	{% if deescription != None and deescription != '' %}
+		{{ description }}
+	{% else %}
+		Description is coming soon
+	{% endif %}
+</p> 
+
+{% endblock %}
