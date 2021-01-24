@@ -7,3 +7,5 @@
 *.swp
 
 /backup
+
+*/node_modules
